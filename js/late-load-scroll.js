@@ -30,7 +30,7 @@
         }
       });
     });
-    x$(this.settings.container).fire("scroll");
+    x$(this.settings.container).fire(this.settings.container.event);
   }
 
   document.jpLateload = new lateload;
