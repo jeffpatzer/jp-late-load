@@ -7,6 +7,8 @@
       container :   window
     };
     var settings = this.settings;
+    var imgs;
+
 
     var convenience_methods = {
       belowTheFold: function() {
@@ -17,7 +19,12 @@
       },
     }
     xui.extend(convenience_methods);
-    var imgs = x$("img[data-ll-src]");
+
+    this.getImages = function () {
+      imgs = x$("img[data-ll-src]")
+      return imgs;
+    }
+    
     x$(this.settings.container).on(this.settings.event, function(){
       imgs.each(function() {
         if (!x$(this).belowTheFold(this.settings)) {
@@ -30,6 +37,8 @@
         }
       });
     });
+
+    this.getImages();
     x$(this.settings.container).fire(this.settings.container.event);
   }
 
