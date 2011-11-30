@@ -7,49 +7,17 @@
   </head>
   <body id="my-late-load-scroll-example">
     <div id="top">
-      This is a small JS meant to load images only as they come into view of the window. If they are not in view, the images are not loaded, this helps to speed up the render time of the page, while also saving resources by not downloading unnecessary items. 
+      This is a small JS meant to load images only as they come into view of the window. If they are not in view, the images are not loaded, this helps to speed up the render time of the page, while also saving resources by not downloading unnecessary items. There is a threshold setting that will determine how far ahead of the scroll event images should be loaded. 
     </div>
-    <!-- <div id="content-normal">
-          <img id="1" src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-          <img id="20" src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg'>
-        </div> -->
     <div id="content-late-load">
       <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
-      <img data-ll-src='http://farm6.staticflickr.com/5285/5345905755_5cc03063d7.jpg' data-ll-loaded='false'>
+      <img data-ll-src='http://farm5.staticflickr.com/4088/5176419508_ebd1cb929e.jpg' data-ll-loaded='false'>
+      <img data-ll-src='http://farm2.staticflickr.com/1078/5125400961_59c91bc043.jpg' data-ll-loaded='false'>
+      <img data-ll-src='http://farm5.staticflickr.com/4090/5175597212_6b8e41bbe8.jpg' data-ll-loaded='false'>
+      <img data-ll-src='http://farm2.staticflickr.com/1074/5125497931_f76965a564.jpg' data-ll-loaded='false'>
+      <img data-ll-src='http://farm5.staticflickr.com/4153/5172078269_d20812f7d9.jpg' data-ll-loaded='false'>
+      <img data-ll-src='http://farm6.staticflickr.com/5289/5254419806_5652dc70a1.jpg' data-ll-loaded='false'>
+      <img data-ll-src='http://farm2.staticflickr.com/1169/5125398817_d217f18121.jpg' data-ll-loaded='false'>
     </div>
 
     <script type="text/javascript" src="js/xui/lib/xui-2.3.2.js"></script>
