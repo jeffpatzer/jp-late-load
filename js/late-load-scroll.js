@@ -1,31 +1,38 @@
 // Late load images on scroll
-x$(document).on("DOMContentLoaded", function(){
-  var settings = {
-    event     :   "scroll",
-    threshold :   300,
-    container :   window
-  };
-  var convenience_methods = {
-    belowTheFold: function(settings) {
-      if (settings.container === undefined || settings.container === window) {
-        var fold = window.innerHeight + window.pageYOffset;
-      }
-      return fold <= this[0].y - settings.threshold;
-    },
-  }
-  xui.extend(convenience_methods);
-  var imgs = x$("img[data-ll-src]");
-  x$(settings.container).on(settings.event, function(){
-    imgs.each(function() {
-      if (!x$(this).belowTheFold(settings)) {
-        // console.log(this);
-        // console.log(x$(this).offsetTop());
-        if (x$(this).attr('data-ll-loaded') != 'true') {
-          x$(this).attr('data-ll-loaded', 'true');
-          x$(this).attr('src', x$(this).attr('data-ll-src'));
+(function () {
+  function lateload () {
+    this.settings = {
+      event     :   "scroll",
+      threshold :   300,
+      container :   window
+    };
+    var settings = this.settings;
+
+    var convenience_methods = {
+      belowTheFold: function() {
+        if (settings.container === undefined || settings.container === window) {
+          var fold = window.innerHeight + window.pageYOffset;
         }
-      }
+        return fold <= this[0].y - settings.threshold;
+      },
+    }
+    xui.extend(convenience_methods);
+    var imgs = x$("img[data-ll-src]");
+    x$(this.settings.container).on(this.settings.event, function(){
+      imgs.each(function() {
+        if (!x$(this).belowTheFold(this.settings)) {
+          // console.log(this);
+          // console.log(x$(this).offsetTop());
+          if (x$(this).attr('data-ll-loaded') != 'true') {
+            x$(this).attr('data-ll-loaded', 'true');
+            x$(this).attr('src', x$(this).attr('data-ll-src'));
+          }
+        }
+      });
     });
-  });
-  x$(settings.container).fire("scroll");
-});
+    x$(this.settings.container).fire("scroll");
+  }
+
+  document.jpLateload = new lateload;
+})();
+
