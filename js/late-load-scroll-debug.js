@@ -4,24 +4,24 @@
 // are ever downloaded as resources. 
 
 /* 
- * Usage
- * 
- * All img tag src attributes need to be renamed to data-ll-src
- * All img tags that will be late-loaded need an additional attribute of data-ll-loaded='false'
- *
- */
+* Usage
+* 
+* All img tag src attributes need to be renamed to data-ll-src
+* All img tags that will be late-loaded need an additional attribute of data-ll-loaded='false'
+*
+*/
 x$(document).on("DOMContentLoaded", function(){
   var settings = {
     event     :   "scroll",
     threshold :   300,        // How far ahead of the scroll should imgs be loaded
     container :   window
   };
-  
+
   // Settings object
   // console.log("Settings object: ")
   // console.log(settings);
   // console.log("\n")
-  
+
   var convenience_methods = {
     height: function() {
       // Height of the Viewport
@@ -56,8 +56,8 @@ x$(document).on("DOMContentLoaded", function(){
     }
   }
   xui.extend(convenience_methods);
-  
-  
+
+
   // Test my extended Functions
   // x$('window').belowTheFold();
   // x$('window').aboveTheTop();
@@ -67,7 +67,7 @@ x$(document).on("DOMContentLoaded", function(){
   // x$('#20').belowTheFold(this, settings);
   // x$('#20').aboveTheTop(this, settings);8
   // console.log("\n");
-  
+
   // console.log("DOMContentLoaded event fired.")
   var imgs = x$("img[data-ll-src]");
   // console.log(imgs);
@@ -82,7 +82,7 @@ x$(document).on("DOMContentLoaded", function(){
       }
     });
   });
-  
+
   // Fire a scroll event to show the first few images
   x$(settings.container).fire("scroll");
 });
