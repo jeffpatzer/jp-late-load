@@ -38,14 +38,12 @@
         });
       });
 
-      x$(this.settings.container).fire(this.settings.container.event);
+      x$(this.settings.container).fire(this.settings.event);
     }
     this.init();
   }
 
   document.imgLateLoad = new lateLoad();
-  // Fire a scroll event to kick the widget off
-  x$(window).fire('scroll');
 
 })();
 
