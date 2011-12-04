@@ -30,8 +30,6 @@
       x$(this.settings.container).on(this.settings.event, function(){
         imgs.each(function() {
           if (!x$(this).belowTheFold(this.settings)) {
-            // console.log(this);
-            // console.log(x$(this).offsetTop());
             if (x$(this).attr('data-ll-loaded') != 'true') {
               x$(this).attr('data-ll-loaded', 'true');
               x$(this).attr('src', x$(this).attr('data-ll-src'));
@@ -45,7 +43,7 @@
     this.init();
   }
 
-  document.jpLateLoad = new lateLoad();
+  document.imgLateLoad = new lateLoad();
   // Fire a scroll event to kick the widget off
   x$(window).fire('scroll');
 
