@@ -24,9 +24,10 @@
       imgs = x$("img[data-ll-src]")
       return imgs;
     }
-    this.getImages();
 
     this.init = function() {
+      this.getImages();
+      
       x$(this.settings.container).on(this.settings.event, function(){
         imgs.each(function() {
           if (!x$(this).belowTheFold(this.settings)) {
