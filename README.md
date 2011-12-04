@@ -4,6 +4,4 @@ This is a small JS meant to load images only as they come into view of the windo
 
 ## ToDo
 
-1. Remove the dependence of helper functions on the XUI object
-2. Allow for options to be set without tweaking the JS file
-3. General code clean-up and tidying
+1. Allow for options to be set without tweaking the JS file
